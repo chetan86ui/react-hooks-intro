@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useState } from 'react'
+import './App.css'
 
-function App() {
+const App = () => {
+
+  //console.log(useState("Hooks Intro Before"));
+
+  //let firstname = useState
+  //let name = "Hooks Intro";
+
+  const [name,setname] =useState('Hooks intro before');
+  const changeName = () => {
+    if (name === 'Hooks intro before') {
+      setname('Hooks intro After');
+    }
+    if (name === 'Hooks intro After') {
+      setname('Hooks intro before');
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{ name }</h1>
+      <button onClick={ changeName } >Click here</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
