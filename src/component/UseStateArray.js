@@ -19,11 +19,23 @@ const UseStateArray = () => {
         setMyData([]);
     }
 
+    const deleteElement = (id) => {
+        const newArray = myData.filter( (currentElement) => {
+            return currentElement.id !== id;
+        })
+        setMyData(newArray);
+    }
+
     return (
         <>
           { 
             myData.map((currentElement) => {
-            return <div key={ currentElement.id }>My Name is {currentElement.myName} and my age is { currentElement.age }</div>
+            return (
+                <div className="list" key={ currentElement.id }>
+                    My Name is {currentElement.myName} and my age is { currentElement.age } 
+                    <button onClick={ () => deleteElement(currentElement.id) }>delete</button>
+                </div>
+                );
             })
           }
           <button onClick={ clearData }>Clear</button>
