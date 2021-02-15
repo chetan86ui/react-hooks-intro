@@ -1,6 +1,7 @@
 import React from 'react'
 import RulesHook from './component/RulesHook'
 import UseStateArray from './component/UseStateArray'
+import UseStateObject from './component/UseStateObject'
 import './App.css'
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
     <div>
         <RulesHook />
         <UseStateArray />
+        <UseStateObject />
     </div>
   )
 }
