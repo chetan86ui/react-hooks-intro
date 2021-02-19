@@ -6,9 +6,17 @@ function BasicForms() {
     const [allEntry,setAllEntry] = useState([]);
     const submitForm = (e) => {
         e.preventDefault();
-        const newEntry = {email: email, password: password};
-        setAllEntry([...allEntry, newEntry]);
-        console.log(allEntry);
+        if (email && password) {
+            const newEntry = {id: new Date().getTime().toString(), email, password};
+            setAllEntry([...allEntry, newEntry]);
+            console.log(allEntry);
+
+            setemail('');
+            setpassword('');
+        } else {
+            alert("Please fill data");
+        }
+        
     }
 
     return (
@@ -27,8 +35,9 @@ function BasicForms() {
         <div>
             {
                 allEntry.map((currentElement) => {
+                    const {id,email,password} = currentElement;
                     return  (
-                        <div>{ currentElement.email}  { currentElement.password} </div>
+                        <div key={id}>{ email}  { password} </div>
                     )
                 })
             }
