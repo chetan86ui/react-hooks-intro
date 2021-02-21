@@ -4,6 +4,7 @@ import UseStateArray from './component/UseStateArray'
 import UseStateObject from './component/UseStateObject'
 import ShortCirEval from './component/ShortCirEval'
 import BasicForms from './component/forms/BasicForms'
+import UseEffact1 from './component/useeffact/UseEffact1'
 import './App.css'
 
 const App = () => {
@@ -27,11 +28,12 @@ const App = () => {
 
   return (
     <div>
-        <RulesHook />
-        <UseStateArray />
-        <UseStateObject />
-        <ShortCirEval />
-        <BasicForms />
+        <RulesHook /><hr/>
+        <UseStateArray /><hr/>
+        <UseStateObject /><hr/>
+        <ShortCirEval /><hr/>
+        <BasicForms /><hr/>
+        <UseEffact1 /><hr/>
     </div>
   )
 }
